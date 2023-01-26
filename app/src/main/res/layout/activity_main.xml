@@ -7,24 +7,22 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/ll_title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="56dp"
         android:gravity="center"
         android:orientation="vertical"
         android:rotation="350"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.120000005">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/outfit_semibold"
-            android:text="Kertas"
+            android:text="@string/paper"
             android:textColor="#FF9800"
             android:textSize="32sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -36,54 +34,51 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/outfit_semibold"
-            android:text="Gunting"
+            android:text="@string/scissors"
             android:textColor="#4CAF50"
             android:textSize="32sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.189" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/outfit_semibold"
-            android:text="Batu"
+            android:text="@string/rock"
             android:textColor="@color/purple_200"
             android:textSize="32sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.259" />
+            app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/refresh"
+        android:id="@+id/ib_refresh"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
         android:background="#00000000"
+        android:contentDescription="@string/refresh_description"
         android:scaleType="fitXY"
         android:src="@drawable/refresh"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.617" />
+        app:layout_constraintTop_toBottomOf="@+id/ll_container" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/ll_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.294">
+        app:layout_constraintTop_toBottomOf="@+id/ll_title_text">
 
         <LinearLayout
             android:layout_width="100dp"
@@ -92,34 +87,34 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.128"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.661">
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/outfit_semibold"
-                android:text="Pemain 1 "
+                android:text="@string/player_1"
                 android:textColor="#03A9F4"
                 android:textSize="24sp" />
 
-            <include android:id="@+id/player_option" layout="@layout/option_list" />
+            <include
+                android:id="@+id/player_option"
+                layout="@layout/option_list" />
         </LinearLayout>
 
         <TextView
-            android:layout_margin="10dp"
-            android:id="@+id/result"
+            android:id="@+id/tv_result"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:fontFamily="@font/outfit_semibold"
             android:gravity="center"
             android:padding="8dp"
             android:rotation="-20"
             android:rotationY="0"
-            android:text="VS"
+            android:text="@string/initial_text_result"
             android:textColor="#FF0101"
             android:textSize="48sp" />
 
@@ -130,21 +125,21 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.128"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.661">
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/outfit_semibold"
-                android:text="COM "
+                android:text="@string/computer"
                 android:textColor="#03A9F4"
                 android:textSize="24sp" />
 
-            <include android:id="@+id/computer_option" layout="@layout/option_list" />
+            <include
+                android:id="@+id/computer_option"
+                layout="@layout/option_list" />
         </LinearLayout>
 
     </LinearLayout>

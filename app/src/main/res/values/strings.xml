@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">ChallengeChapter4</string>
+    <string name="refresh_description">refresh button for restart game</string>
+    <string name="player_1">Pemain 1</string>
+    <string name="computer">COM</string>
+    <string name="paper">Kertas</string>
+    <string name="scissors">Gunting</string>
+    <string name="rock">Batu</string>
+    <string name="rock_button_desc">batu</string>
+    <string name="paper_button_desc">kertas</string>
+    <string name="scissors_button_desc">gunting</string>
+    <string name="initial_text_result">VS</string>
+    <string name="player_win_result">Pemain 1 \n MENANG</string>
+    <string name="com_win_result">Pemain 2 \n MENANG</string>
+    <string name="draw_result">DRAW</string>
 </resources>

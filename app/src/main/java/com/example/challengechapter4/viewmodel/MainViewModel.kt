@@ -1,7 +1,7 @@
 package com.example.challengechapter4.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.example.challengechapter4.domain.AppState
+import com.example.challengechapter4.domain.InGameAppData
 import com.example.challengechapter4.domain.GameState
 import kotlinx.coroutines.flow.*
 import kotlin.random.Random
@@ -11,8 +11,8 @@ class MainViewModel : ViewModel() {
         val OPTION = arrayOf("batu", "kertas", "gunting")
     }
 
-    private val _uiState = MutableStateFlow(AppState())
-    val uiState: StateFlow<AppState> = _uiState.asStateFlow()
+    private val _uiState = MutableStateFlow(InGameAppData())
+    val uiState: StateFlow<InGameAppData> = _uiState.asStateFlow()
 
     fun startGame(chosen: String) {
         _uiState.update {
@@ -21,7 +21,10 @@ class MainViewModel : ViewModel() {
             }
 
             it.copy(
-                chosen = mapOf(Pair("player", chosen), Pair("computer", OPTION[Random.nextInt(from = 0, until = 3)])),
+                chosen = mapOf(
+                    Pair("player", chosen),
+                    Pair("computer", OPTION[Random.nextInt(from = 0, until = 3)])
+                ),
                 state = GameState.FINISH
             )
         }
