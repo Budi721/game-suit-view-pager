@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.challengechapter4'
+    namespace 'com.example.challengechapter5'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.challengechapter4"
+        applicationId "com.example.challengechapter5"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -44,6 +44,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.preference:preference:1.2.0'
     testImplementation 'junit:junit:4.13.2'
     implementation "androidx.activity:activity-ktx:1.6.1"
     implementation "androidx.fragment:fragment-ktx:1.5.5"

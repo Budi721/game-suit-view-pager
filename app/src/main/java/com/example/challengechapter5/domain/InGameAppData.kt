@@ -1,4 +1,4 @@
-package com.example.challengechapter4.domain
+package com.example.challengechapter5.domain
 
 data class InGameAppData(
     val chosen: Map<String, String> = mapOf(Pair("player", ""), Pair("computer", "")),
