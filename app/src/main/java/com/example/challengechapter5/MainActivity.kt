@@ -87,23 +87,20 @@ class MainActivity : AppCompatActivity() {
                         }
                         val player2 = if (mode == GameMode.VERSUS_COM) "CPU" else "Pemain 2"
                         val comChosenText = resources.getString(R.string.com_chosen_tv, player2, comChosen)
+                        binding.tvPlayerChosen.visibility = View.VISIBLE
+                        binding.tvPlayerChosen.text = comChosenText
                         when (it.result) {
                             "player" -> {
                                 val text = "${username ?: "Pemain 1"} \n MENANG!"
-                                binding.tvPlayerChosen.visibility = View.VISIBLE
-                                binding.tvPlayerChosen.text = comChosenText
                                 dialog.result(text).build().show()
                             }
                             "computer" -> {
                                 val text = "$player2 \n MENANG!"
-                                binding.tvPlayerChosen.visibility = View.VISIBLE
-                                binding.tvPlayerChosen.text = comChosenText
                                 dialog.result(text).build().show()
                             }
                             "draw" -> {
-                                binding.tvPlayerChosen.visibility = View.VISIBLE
-                                binding.tvPlayerChosen.text = comChosenText
-                                dialog.build().show()
+                                val text = "DRAW!"
+                                dialog.result(text).build().show()
                             }
                         }
 

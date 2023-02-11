@@ -9,18 +9,31 @@ import android.os.Looper
 import android.view.WindowInsets
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
+import com.example.challengechapter5.databinding.ActivityLaunchBinding
 
 @SuppressLint("CustomSplashScreen")
 class LaunchActivity : AppCompatActivity() {
+
+    private val binding: ActivityLaunchBinding by lazy { ActivityLaunchBinding.inflate(layoutInflater) }
+
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_launch)
 
+        Glide.with(this)
+            .load(IMG_URL)
+            .into(binding.ivTitleText)
+
+        setContentView(binding.root)
         window.insetsController?.hide(WindowInsets.Type.statusBars())
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, ScreenSlideActivity::class.java))
             finish()
         }, 3000)
+    }
+
+    companion object {
+        const val IMG_URL = "https://i.ibb.co/HC5ZPgD/splash-screen1.png"
     }
 }
