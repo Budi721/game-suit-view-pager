@@ -160,6 +160,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.computerOption.batu.setOnClickListener {
             Log.d(TAG, "Player 2 memilih Batu")
+            if (mode == GameMode.VERSUS_COM) return@setOnClickListener
             if (viewModel.uiState.value.chosen["computer"]!!.isNotBlank()) {
                 showSnackBar(it); return@setOnClickListener
             }
@@ -169,6 +170,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.computerOption.gunting.setOnClickListener {
             Log.d(TAG, "Player 2 memilih Gunting")
+            if (mode == GameMode.VERSUS_COM) return@setOnClickListener
             if (viewModel.uiState.value.chosen["computer"]!!.isNotBlank()) {
                 showSnackBar(it); return@setOnClickListener
             }
@@ -179,6 +181,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.computerOption.kertas.setOnClickListener {
             Log.d(TAG, "Player 2 memilih Kertas")
+            if (mode == GameMode.VERSUS_COM) return@setOnClickListener
             if (viewModel.uiState.value.chosen["computer"]!!.isNotBlank()) {
                 showSnackBar(it); return@setOnClickListener
             }
